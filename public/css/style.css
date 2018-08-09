@@ -1,0 +1,198 @@
+
+@import url('https://fonts.googleapis.com/css?family=PT+Sans');
+
+
+:root{
+    --pink: #E65F5C;
+    --palegreen: #AAD656;
+    --darkgreen: #8AB869;
+    --textgreen: #69CE21;
+    --yellow: #FFFF82;
+    --light: #F5F7DC;
+    --dark: #0F0326;
+    /* dark green: rgb(31, 75, 0) */
+}
+
+/* body{
+    width:100%;
+    height:100%;
+} */
+
+body{
+    position:relative;
+    font-family: "PT Sans", sans-serif;
+    background: url('/img/full-bloom_bg.jpg');
+    background-color: var(--yellow);
+    color: var(--dark);
+    margin-bottom: 80px;
+    /* -webkit-font-smoothing: antialiased; */
+}
+
+.navbar{
+    box-shadow: 0 0px 7px rgba(0,0,0,0.5);
+}
+
+.bg-pink{
+    background-color: var(--pink);
+}
+
+.bg-green{
+    background-color: var(--palegreen);
+}
+
+.btn{
+    border: 3px solid rgba(0, 0, 0, .1);
+}
+
+.btn-success{
+    background-color: var(--palegreen);
+    box-shadow: 0 1px 7px rgba(0,0,0,0.35);
+}
+
+.btn-success:hover{
+    border-color: #AA3C39;
+    background-color: #AA3C39;
+}
+
+.btn-secondary{
+    background-color:#CCC;
+}
+
+.green-text{
+    color:#FFF;
+    text-shadow: 0 1px 5px rgba(31, 75, 0,.65),
+                 0 5px 8px rgba(31, 75, 0, .15),
+                 0 10px 12px rgba(31, 75, 0, .1);
+}
+
+.jumbotron {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    padding: 0;
+  }
+  
+  .jumbotron .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: auto;
+    background: linear-gradient(var(--dark), #000);
+    opacity: 0.3;
+  }
+  
+  .jumbotron .background {
+    height: 100%;
+    background-image: url("/img/jumbo-bg3.jpg");
+    background-position: left bottom;
+    background-size: cover;
+  }
+  
+  .jumbotron .caption {
+    position: absolute;
+    top: 30%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .jumbotron .caption h1,
+  .jumbotron .caption p {
+    color: #FFF;
+    text-shadow: 0 2px 7px rgba(0, 0, 0,.65),
+                 0 5px 10px rgba(0, 0, 0, .15),
+                 0 10px 15px rgba(0, 0, 0, .1);
+  }
+  
+  .jumbotron h1 {
+    font-size: 80px;
+    font-weight: 800;
+  }
+  
+  .jumbotron p {
+    font-size: 30px;
+  }
+
+  .box-shadow{
+    box-shadow: 0 5px 20px 2px rgba(0,0,0,.35);
+  }
+
+  .article-container{
+      padding-bottom:25px;
+  }
+
+  .alert{
+    border: 4px solid rgba(0,0,0,.08);
+  }
+
+  .no-radius{
+    border-radius: 0!important;
+  }
+
+  .card {
+    border: none;
+    border-radius: 0;
+  }
+  
+  .card .card-header {
+    background-color: var(--pink);
+    position: relative;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  
+  .card .card-header h3 {
+    color: white;
+  }
+  
+  .card .card-header .btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  
+  .card .card-header .btn.delete {
+    right: 160px;
+  }
+  
+  .card .card-body {
+    font-size: 16px;
+  }
+  
+  .card .card-header .article-link {
+    color: white;
+    display: inline-block;
+    width: 80%;
+  }
+
+  .card a:not([href]):not([tabindex]).scrape-new, .card a {
+    color: var(--pink);
+    cursor:pointer;
+  }
+
+  .card a:hover{
+      text-decoration:none;
+  }
+  
+
+  footer{
+    position: absolute;
+    width: 100%;
+    height: 80px;
+    color: white;
+    background-color: rgba(230, 96, 92, .75);
+  }
+
+  footer p{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    margin: 0;
+    font-weight: 800;
+    background: var(--pink);
+  }

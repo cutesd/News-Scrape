@@ -1,0 +1,114 @@
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Notes for Article: </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-striped">
+                    <tbody>
+                        {{!-- <tr>
+                            <th scope="row">1</th>
+                            <td class="w-75">Mark</td>
+                            <td class="text-right">
+                                <button class="btn btn-danger">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td class="w-75">Jacob</td>
+                            <td class="text-right">
+                                <button class="btn btn-danger">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td class="w-75">Larry</td>
+                            <td class="text-right">
+                                <button class="btn btn-danger">
+                                    <i class="far fa-trash-alt"></i>
+                                </button>
+                            </td>
+                        </tr> --}}
+                    </tbody>
+                </table>
+                {{!-- --}}
+                <div class="input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">New Note:</span>
+                    </div>
+                    <textarea class="form-control" aria-label="New Note" rows="3"></textarea>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success">Save Note</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid box-shadow">
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="caption">
+        <h1>Saved Articles</h1>
+        <p>Your Saved Articles</p>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Launch demo modal
+</button>
+
+<div class="article-container">
+
+    {{#ifArticles articles}}
+    <div class="card-columns">
+        {{#each articles}}
+        <div class="card box-shadow mt-3 mb-4">
+            {{#if img}}
+            <a href="{{link}}" target="_blank">
+                <img class="card-img-top" src="{{img}}" alt="Card image cap">
+            </a>
+            {{/if}}
+            <div class="card-body p-0">
+                <h4 class="card-header text-center no-radius px-4 py-3">
+                    <a class="text-white" href="{{link}}" target="_blank">{{title}}</a>
+                </h4>
+                <p class="card-text p-4">{{body}}</p>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-success btn-lg btn-block green-text" data-id="{{_id}}">Article Notes</button>
+                <button class="btn btn-danger btn-lg btn-block" data-id="{{_id}}">Remove from Saved</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{else}}
+
+
+    <div class="alert bg-green green-text text-center">
+        <h4>Looks like you haven't saved any articles.</h4>
+    </div>
+    <div class="card box-shadow">
+        <div class="card-header text-center">
+            <h3>Would you like to browse available articles?</h3>
+        </div>
+        <div class="card-body text-center">
+            <h4>
+                <a href="/">Browse Articles</a>
+            </h4>
+        </div>
+    </div>
+    {{/ifArticles}}
+</div>
