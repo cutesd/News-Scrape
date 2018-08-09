@@ -3,6 +3,7 @@ $(document).ready(function () {
 
     // save article button
     // PUT /articles/:id
+    // location.reload();
 
     // view notes of article: Article by id populated ("notes")
     // GET /articles/:id
@@ -10,6 +11,7 @@ $(document).ready(function () {
 
     // scrape new articles
     // GET /scrape
+    // location.reload();
 
     // delete note
     // DELETE /notes/:id
@@ -25,6 +27,7 @@ $(document).ready(function () {
 
     // clear all 
     // DELETE /articles/clear
+    // location.reload();
 
     //
     //
