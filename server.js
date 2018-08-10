@@ -29,7 +29,7 @@ mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
-require("./routes/api-routes")(app);
+require("./routes/rest-routes")(app);
 
 
 // Start the server

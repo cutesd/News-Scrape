@@ -7,7 +7,18 @@ var Schema = mongoose.Schema;
 // This is similar to a Sequelize model
 var NoteSchema = new Schema({
   // `text` is of type String
-  text: String
+  text: {
+    type: String,
+    validate: [
+      // Function takes in the new `longstring` value to be saved as an argument
+      function(input) {
+        // If this returns true, proceed. If not, return the error message below
+        return input.length >= 1;
+      },
+      // Error Message
+      "You must enter note text."
+    ]
+  }
 });
 
 // This creates our model from the above schema, using mongoose's model method

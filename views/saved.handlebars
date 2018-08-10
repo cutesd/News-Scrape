@@ -1,56 +1,30 @@
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="noteModal" tabindex="-1" role="dialog" aria-labelledby="noteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Notes for Article: </h5>
+                <h5 class="modal-title" id="noteModalLabel">Notes for Article: <span id="articleTitle"></span></h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
+                    <span aria-hidden="true"><i class="far fa-times-circle"></i></span>
                 </button>
             </div>
             <div class="modal-body">
                 <table class="table table-striped">
                     <tbody>
-                        {{!-- <tr>
-                            <th scope="row">1</th>
-                            <td class="w-75">Mark</td>
-                            <td class="text-right">
-                                <button class="btn btn-danger">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td class="w-75">Jacob</td>
-                            <td class="text-right">
-                                <button class="btn btn-danger">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td class="w-75">Larry</td>
-                            <td class="text-right">
-                                <button class="btn btn-danger">
-                                    <i class="far fa-trash-alt"></i>
-                                </button>
-                            </td>
-                        </tr> --}}
+                        {{!-- Notes --}}
                     </tbody>
                 </table>
-                {{!-- --}}
+                
                 <div class="input-group">
                     <div class="input-group-prepend">
                         <span class="input-group-text">New Note:</span>
                     </div>
-                    <textarea class="form-control" aria-label="New Note" rows="3"></textarea>
+                    <textarea class="form-control" aria-label="New Note" rows="3" id="noteText"></textarea>
                 </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save Note</button>
+                <button type="button" class="btn btn-success" id="saveNote-btn">Save Note</button>
             </div>
         </div>
     </div>
@@ -65,16 +39,12 @@
     </div>
 </div>
 
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Launch demo modal
-</button>
-
 <div class="article-container">
 
     {{#ifArticles articles}}
-    <div class="card-columns">
+    <div class="card-deck justify-content-center no-gutters">
         {{#each articles}}
+        <div class="col-md-6 col-lg-4">
         <div class="card box-shadow mt-3 mb-4">
             {{#if img}}
             <a href="{{link}}" target="_blank">
@@ -88,9 +58,10 @@
                 <p class="card-text p-4">{{body}}</p>
             </div>
             <div class="card-footer">
-                <button class="btn btn-success btn-lg btn-block green-text" data-id="{{_id}}">Article Notes</button>
-                <button class="btn btn-danger btn-lg btn-block" data-id="{{_id}}">Remove from Saved</button>
+                <button class="btn btn-success btn-lg btn-block green-text addNote-btn" data-id="{{_id}}">Article Notes</button>
+                <button class="btn btn-danger btn-lg btn-block save-btn" data-id="{{_id}}" data-type="unsave">Remove from Saved</button>
             </div>
+        </div>
         </div>
         {{/each}}
     </div>

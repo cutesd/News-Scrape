@@ -146,13 +146,15 @@ body{
     color: white;
   }
 
-.card a {
+.card a, .card a:not([href]):not([tabindex]) {
     color: var(--pink);
     cursor:pointer;
+    text-decoration: underline solid transparent;
+    transition: text-decoration .75s ease;
   }
 
-  .card a:hover{
-      text-decoration:none;
+  .card a:hover, .card a:not([href]):not([tabindex]):hover{
+    text-decoration: underline solid var(--pink);
   }
   
   footer{
@@ -175,3 +177,10 @@ body{
     font-weight: 800;
     background: var(--pink);
   }
+
+  .card-deck > div[class*='col-'] {
+    display: flex;
+    flex:1 0 auto;
+  }
+
+  

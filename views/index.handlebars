@@ -16,7 +16,7 @@
         <div class="card box-shadow mt-3 mb-4">
             {{#if img}}
             <a href="{{link}}" target="_blank">
-                <img class="card-img-top" src="{{img}}" alt="Card image cap">
+                <img class="card-img-top" src="{{img}}" alt="{{title}}">
             </a>
             {{/if}}
             <div class="card-body p-0">
@@ -26,7 +26,7 @@
                 <p class="card-text p-4">{{body}}</p>
             </div>
             <div class="card-footer">
-                <button class="btn btn-success btn-lg btn-block green-text" data-id="{{_id}}">Save Article</button>
+                <button class="btn btn-success btn-lg btn-block green-text save-btn" data-id="{{_id}}" data-type="save">Save Article</button>
             </div>
         </div>
         {{/unless}} 
@@ -43,7 +43,7 @@
         </div>
         <div class="card-body text-center">
             <h4>
-                <a class="scrape-new">Try Scraping New Articles</a>
+                <a id="scrape-btn">Try Scraping New Articles</a>
             </h4>
             <h4>
                 <a href="/saved">Go to Saved Articles</a>

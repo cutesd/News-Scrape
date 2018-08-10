@@ -19,7 +19,7 @@ module.exports = function (app) {
 
     //Route for saving Article by ID
     app.put("/articles/:id", (req, res) =>
-        db.Article.findByIdAndUpdate(req.params.id, { $set: req.body })
+        db.Article.findByIdAndUpdate(req.params.id, { $set: { saved: req.body.saved } }, { new: true })
             .then(dbArticle => res.json(dbArticle))
             .catch(err => res.json(err))
     );
@@ -45,8 +45,11 @@ module.exports = function (app) {
 
     // Delete all
     app.delete("/articles/clear", (req, res) =>
-        db.Article.remove({})
-            .then(result => res.json(result))
-            .catch(err => res.json(err))
+        db.Note.remove({})
+            .then(dbNote => db.Article.remove({})
+                .then(result => res.json(result))
+                .catch(err => res.json(err))
+            )
     );
+
 }
