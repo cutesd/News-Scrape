@@ -1,4 +1,6 @@
 # News-Scrape
+[Visit the Deployed Site](https://calm-temple-10895.herokuapp.com/)
+
 A web app that lets users view and leave comments on the latest news using Mongoose and Cheerio to scrape news from HuffPost site.
 
 
